@@ -7,5 +7,8 @@ terraform {
   }
 }
 
-provider "databricks" {}
+provider "databricks" {
+  host = "${var.host_name}"
+  token = "'{var.token}"
+}
 
