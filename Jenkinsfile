@@ -39,7 +39,6 @@ pipeline {
                     sh """
                     export DATABRICKS_HOST=${DEV_HOST}
                     export DATABRICKS_TOKEN=${DEV_TOKEN}
-		    terraform destroy
                     terraform init
                     terraform validate
                     terraform plan
