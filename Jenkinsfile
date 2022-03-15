@@ -37,8 +37,7 @@ pipeline {
             steps {
                 dir('/var/lib/jenkins/workspace/Development/terraform') {
                     sh """
-                    export DATABRICKS_HOST=${DEV_HOST}
-                    export DATABRICKS_TOKEN=${DEV_TOKEN}
+		    terraform destroy
                     terraform init
                     terraform validate
                     terraform plan
