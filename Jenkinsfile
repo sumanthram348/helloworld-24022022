@@ -23,13 +23,13 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn clean package"
-                sh "mv /var/lib/jenkins/workspace/Development/webapp/target/*.war /var/lib/jenkins/workspace/Development/webapp/target/*.jar"
+                sh "mv /var/lib/jenkins/workspace/Development/webapp/target/*.war /var/lib/jenkins/workspace/Development/webapp/target/try.jar"
             }
         }
 
         stage('Copy to s3') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/workspace/Development/webapp/target/*.jar s3://demokoantek-rootbucket/ohio-prod/3285283223415114/FileStore/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/Development/webapp/target/try.jar s3://demokoantek-rootbucket/ohio-prod/1608692348674012/FileStore/"
             }
         }
         
