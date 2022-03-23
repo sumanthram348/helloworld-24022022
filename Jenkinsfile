@@ -29,7 +29,7 @@ pipeline {
 
         stage('Copy to s3') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/workspace/Development/webapp/target/try.jar s3://demokoantek-rootbucket/ohio-prod/1608692348674012/FileStore/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/Development/webapp/target/try.jar s3://demokoantek-rootbucket/ohio-prod/4249602087255976/FileStore/"
             }
         }
         
